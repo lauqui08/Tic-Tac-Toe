@@ -5,16 +5,18 @@ let moves = 0;
 items.forEach(item => {
     item.addEventListener('click',(event) => {
         moves++;
-        console.log(moves);
         if(moves === 9){
+            event.target.classList.add(player.toLowerCase());
             event.target.textContent = player;
             alert('Draw!');
         }else if(!isWinner){
             if(event.target.textContent === '' && player === 'X'){
+                event.target.classList.add(player.toLowerCase());
                 event.target.textContent = player;
                 checkWinner(player);
                 player = 'O';
             }else if(event.target.textContent === '' && player === 'O'){
+                event.target.classList.add(player.toLowerCase());
                 event.target.textContent = player;
                 checkWinner(player);
                 player = 'X';
